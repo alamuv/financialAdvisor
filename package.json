@@ -1,0 +1,36 @@
+{
+  "name": "financialadvisor",
+  "version": "1.0.0",
+  "description": "user can view financial distribution chart based on the risk level he inputs",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "mocha tests",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alamuv/financialAdvisor.git"
+  },
+  "author": "Alamu Palaniappan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alamuv/financialAdvisor/issues"
+  },
+  "homepage": "https://github.com/alamuv/financialAdvisor#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "supertest": "^1.2.0",
+    "webpack": "^1.13.1"
+  }
+}
