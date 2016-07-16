@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactSlider from 'react-rangeslider';
+import AssetAlloc from './AssetAlloc';
 
 class UserInput extends React.Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class UserInput extends React.Component {
     this.setState({
       riskLevel: value
     });
-    
   }
 
   render () {
@@ -23,7 +23,6 @@ class UserInput extends React.Component {
     return (
       <div>
         <ReactSlider
-          withBars={true}
           min={1}
           max={10}
           step={1}
