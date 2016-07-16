@@ -71,4 +71,4 @@ var assetPlan = [
   }
 ];
 
-module.exports.assetPlan = assetPlan;
+module.exports = assetPlan;

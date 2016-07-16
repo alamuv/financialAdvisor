@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactSlider from 'react-rangeslider';
 import AssetAlloc from './AssetAlloc';
+// import assetPlan from '../../data/data'
+
 
 class UserInput extends React.Component {
   constructor(props) {
@@ -28,7 +30,9 @@ class UserInput extends React.Component {
           step={1}
           value={this.state.riskLevel}
           className='horizontal-slider'
-          onChange={(value)=>this.handleChange(value)} />      
+          onChange={(value)=>this.handleChange(value)} /> 
+        <div>Asset Aloocation for Risk Level: {this.state.riskLevel}</div> 
+        <AssetAlloc riskLevel={this.state.riskLevel} />   
       </div>
     );
   }
