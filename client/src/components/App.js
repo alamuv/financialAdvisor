@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component {
-  render() {
-    return <h1>Sriramajayam</h1>;
-  }
-}
+import UserInput from './UserInput';
 
-// ReactDOM.render(<App />, document.getElementById('app'));
+const App = () => (
+  <div>
+    <h1>Sriramajayam</h1>
+    <UserInput />
+  </div>
+);
+
 export default App;
