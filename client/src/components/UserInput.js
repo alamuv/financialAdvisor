@@ -19,14 +19,14 @@ class UserInput extends React.Component {
 
   componentDidMount() {
     this.setState({
-      assetAlloc: assetPlan[this.state.riskLevel - 1]
+      assetAlloc: assetPlan[this.state.riskLevel]
     });
   }
 
   handleChange(value) {
     this.setState({
       riskLevel: value,
-      assetAlloc: assetPlan[value - 1 ]
+      assetAlloc: assetPlan[value]
     });
   }
 
@@ -46,7 +46,7 @@ class UserInput extends React.Component {
     }
     var innerRadius = 50;
     var chartSeries = [];
-    var color = ['#F7464A', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'];
+    var color = ['#F7464A', '#949FB1', '#FDB45C', '#46BFBD', '#4D5360'];
     
     var i = 0;
     for (var key in this.state.assetAlloc) {
@@ -85,6 +85,8 @@ class UserInput extends React.Component {
           value={this.state.riskLevel}
           className='horizontal-slider'
           onChange={(value)=>this.handleChange(value)} /> 
+        <span id="lowrisk">{'1 (Low Risk)'}</span>
+        <span id="highrisk">{'10 (High Risk)'}</span>
         <div>Asset Distribution for Risk Level: {this.state.riskLevel}</div> 
         {this.renderDonut()}
       </div>
