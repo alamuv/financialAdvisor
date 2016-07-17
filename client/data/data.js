@@ -56,11 +56,11 @@ var assetPlan = [
     foreignStocks: 4
   },
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    usStocks: 60,
+    commodities: 5,
+    bonds: 20,
+    cash: 10,
+    foreignStocks: 5
   },
   {
     usStocks: 75,
