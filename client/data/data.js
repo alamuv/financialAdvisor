@@ -1,73 +1,73 @@
 var assetPlan = [
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    Stocks: 6,
+    Commodities: 6,
+    Bonds: 4,
+    Cash: 80,
+    Index_Funds: 4
   },
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    Stocks: 6,
+    Commodities: 6,
+    Bonds: 4,
+    Cash: 80,
+    Index_Funds: 4
   },
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    Stocks: 6,
+    Commodities: 6,
+    Bonds: 4,
+    Cash: 80,
+    Index_Funds: 4
   },
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    Stocks: 6,
+    Commodities: 6,
+    Bonds: 4,
+    Cash: 80,
+    Index_Funds: 4
   },
   {
-    usStocks: 40,
-    commodities: 5,
-    bonds: 20,
-    cash: 5,
-    foreignStocks: 30
+    Stocks: 40,
+    Commodities: 5,
+    Bonds: 20,
+    Cash: 5,
+    Index_Funds: 30
   },
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    Stocks: 6,
+    Commodities: 6,
+    Bonds: 4,
+    Cash: 80,
+    Index_Funds: 4
   },
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    Stocks: 6,
+    Commodities: 6,
+    Bonds: 4,
+    Cash: 80,
+    Index_Funds: 4
   },
   {
-    usStocks: 6,
-    commodities: 6,
-    bonds: 4,
-    cash: 80,
-    foreignStocks: 4
+    Stocks: 6,
+    Commodities: 6,
+    Bonds: 4,
+    Cash: 80,
+    Index_Funds: 4
   },
   {
-    usStocks: 60,
-    commodities: 5,
-    bonds: 20,
-    cash: 10,
-    foreignStocks: 5
+    Stocks: 60,
+    Commodities: 5,
+    Bonds: 20,
+    Cash: 10,
+    Index_Funds: 5
   },
   {
-    usStocks: 75,
-    commodities: 5,
-    bonds: 10,
-    cash: 5,
-    foreignStocks: 5
+    Stocks: 75,
+    Commodities: 5,
+    Bonds: 10,
+    Cash: 5,
+    Index_Funds: 5
   }
 ];
 

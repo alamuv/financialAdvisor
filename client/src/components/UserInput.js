@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactSlider from 'react-rangeslider';
-// import AssetAlloc from './AssetAlloc';
 import assetPlan from '../../data/data';
-import {Doughnut} from 'react-chartjs';
-import Chart from 'react-chartjs';
+import {PieTooltip, SimpleTooltip} from 'react-d3-tooltip';
+import {PieChart} from 'react-d3-basic';
+// import AssetAlloc from './AssetAlloc';
+// import {Doughnut} from 'react-chartjs';
+// import Chart from 'react-chartjs';
 
 class UserInput extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       riskLevel: 5,
       amount: 0,
@@ -29,77 +30,52 @@ class UserInput extends React.Component {
     });
   }
 
-  renderDonut(){
-    // var chartData = {};
-    // chartData.labels = [];
-    // chartData.datasets = [];
-
-    // var dataset = {};
-    // dataset.data = [];
-    // dataset.backgroundColor = ["#FF6384","#4BC0C0","#FFCE56","#E7E9ED","#36A2EB" ];
-    // dataset.hoverBackgroundColor = ["#FF6384","#4BC0C0","#FFCE56","#E7E9ED","#36A2EB" ];
-
-    // for (var key in this.state.assetAlloc) {
-    //   //The current property is not a direct property of assetAlloc
-    //   if (!this.state.assetAlloc.hasOwnProperty(key)) {
-    //     continue;
-    //   }
-    //   chartData.labels.push(key);
-    //   dataset.data.push(this.state.assetAlloc[key])
-    // }
-    // chartData.datasets.push(dataset);
-
-    var chartData = [];
-    var color = [
-      {
-        color: '#F7464A',
-        highlight: '#FF5A5E'
-      },
-      {
-        color: '#46BFBD',
-        highlight: '#5AD3D1'
-      },
-      {
-        color: '#FDB45C', 
-        highlight: '#FFC870'
-      },
-      {
-        color: '#949FB1',
-        highlight: '#A8B3C5'
-      },
-      {
-        color: '#4D5360',
-        highlight: '#616774'
-      }
-    ];
-
+  renderDonut() {
+    var width = 700,
+     height = 400,
+     title = "Asset Distribution";
+    var name = function(d) {
+      return d.name;
+    };
+    var value = function(d) {
+      console.log(d.value)
+      return d.value;
+    };
+    var valPercent = function(d) {
+      return d.value.toString+'%';
+    }
+    var innerRadius = 50;
+    var chartSeries = [];
+    var color = ['#F7464A', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'];
+    
     var i = 0;
     for (var key in this.state.assetAlloc) {
       var data = {};
+      data.field = key;
       data.value = this.state.assetAlloc[key];
-      data.label = key;
-      data.color = color[i].color;
-      data.highlight = color[i].highlight;
-      chartData.push(data);
+      data.name = key;
+      data.color = color[i];
+      chartSeries.push(data);
       i++;
     }
 
-    var chartOptions = {
-      animation:{
-        animateScale:true
-      }
-    };
-    console.log(chartData)
     return (
-      <div>
-        <Doughnut data={chartData} options={chartOptions}/>
-      </div>
-    );
+      <PieTooltip
+        // title= {"Asset Distribution"}
+        data= {chartSeries}
+        width= {width}
+        height= {height}
+        chartSeries= {chartSeries}
+        value = {value}
+        name = {name}
+        innerRadius = {innerRadius}
+        >
+        <SimpleTooltip value={valPercent}/>
+      </PieTooltip>
+      );
   }
 
-
   render () {
-    console.log(this.state.riskLevel)
     return (
       <div>
         <ReactSlider
@@ -109,12 +85,74 @@ class UserInput extends React.Component {
           value={this.state.riskLevel}
           className='horizontal-slider'
           onChange={(value)=>this.handleChange(value)} /> 
-        <div>Asset Aloocation for Risk Level: {this.state.riskLevel}</div> 
-        {this.renderDonut()} 
+        <div>Asset Distribution for Risk Level: {this.state.riskLevel}</div> 
+        {this.renderDonut()}
       </div>
     );
   }
 }
 
 export default UserInput;
-        // <AssetAlloc riskLevel={this.state.riskLevel} assetAlloc={this.state.assetAlloc}/>  
+  
+          // <AssetAlloc riskLevel={this.state.riskLevel}/>  
+  
+
+    
+  // renderDonut(){
+  //   var chartData = [];
+  //   var color = [
+  //     {
+  //       color: '#F7464A',
+  //       highlight: '#FF5A5E'
+  //     },
+  //     {
+  //       color: '#46BFBD',
+  //       highlight: '#5AD3D1'
+  //     },
+  //     {
+  //       color: '#FDB45C', 
+  //       highlight: '#FFC870'
+  //     },
+  //     {
+  //       color: '#949FB1',
+  //       highlight: '#A8B3C5'
+  //     },
+  //     {
+  //       color: '#4D5360',
+  //       highlight: '#616774'
+  //     }
+  //   ];
+
+  //   var i = 0;
+  //   for (var key in this.state.assetAlloc) {
+  //     var data = {};
+  //     data.value = this.state.assetAlloc[key];
+  //     data.label = key;
+  //     data.color = color[i].color;
+  //     data.strokeColor = color[i].color;
+  //     data.pointColor = color[i].color;
+  //     data.highlight = color[i].highlight;
+  //     data.showInLegend = true;
+  //     chartData.push(data);
+  //     i++;
+  //   }
+
+  //   var chartOptions = {
+  //     tooltipTemplate: "<%= value %>%",
+  //     // legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
+  //     // responsive: true,
+  //   };
+  //   console.log(chartData)
+  //   var datasets = chartData.map(function (ds) { 
+  //     return <li key={ds.label}><span className="legend-color-box" style={{ backgroundColor: ds.strokeColor }}></span> { ds.label }</li>;
+  //   });
+
+  //   return (
+  //     <div>
+  //       <Doughnut data={chartData} options={chartOptions} />
+  //       <ul className={"legend"}>
+  //         { datasets }
+  //       </ul>
+  //     </div>
+  //   );
+  // }

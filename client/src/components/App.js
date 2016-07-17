@@ -5,7 +5,7 @@ import UserInput from './UserInput';
 
 const App = () => (
   <div>
-    <h1>Sriramajayam</h1>
+    <h1>Asset Distribution Estimator</h1>
     <UserInput />
   </div>
 );

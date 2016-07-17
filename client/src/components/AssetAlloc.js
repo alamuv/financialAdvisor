@@ -8,12 +8,17 @@ import Chart from 'react-chartjs';
 class AssetAlloc extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.riskLevel);
     this.state = {
-      assetAlloc: this.props.assetAlloc
+      assetAlloc: assetPlan[this.props.riskLevel - 1]
     }
     console.log('Inside AssetAlloc', this.props.riskLevel, this.state.assetAlloc)
   }
+
+  // componentWillReceiveProps () {
+  //   this.setState({
+  //     assetAlloc: assetPlan[this.props.riskLevel - 1]
+  //   })
+  // }
 
   renderDonut(){
     // var chartData = {};
@@ -80,7 +85,7 @@ class AssetAlloc extends React.Component {
     console.log(chartData)
     return (
       <div>
-        <Doughnut data={chartData} options={chartOptions}/>
+        <Doughnut data={chartData} options={chartOptions} redraw/>
       </div>
     );
   }
