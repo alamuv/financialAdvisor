@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactSlider from 'react-rangeslider';
 import assetPlan from '../../data/data';
+import Label from '../../data/label';
 import {PieTooltip, SimpleTooltip} from 'react-d3-tooltip';
 
 class UserInput extends React.Component {
@@ -84,8 +85,7 @@ class UserInput extends React.Component {
   render () {
     return (
       <div>
-
-        <div className="subheading">{'Choose a Risk Level for your Portfolio'}</div>
+        <div className="subheading">{Label.riskInputHeader}</div>
         <div className="center slider">
           <ReactSlider
             min={1}
@@ -94,12 +94,12 @@ class UserInput extends React.Component {
             value={this.state.riskLevel}
             className='horizontal-slider'
             onChange={(value)=>this.handleChange(value)} /> 
-          <div id="lowrisk">{'Low Risk'}</div>
-          <div id="highrisk">{'High Risk'}</div>
+          <div id="lowrisk">{Label.lowRisk}</div>
+          <div id="highrisk">{Label.highRisk}</div>
         </div>
         <br/>
         <br/>
-        <div className="subheading">{'Asset Distribution for Risk Level '}<span className="riskLevel">{this.state.riskLevel}</span></div> 
+        <div className="subheading">{Label.distributionHeader}<span className="riskLevel">{this.state.riskLevel}</span></div> 
         <div className=".svg-container">
           {this.renderDonut()}
           {this.responsiveDonut()}

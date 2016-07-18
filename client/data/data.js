@@ -1,4 +1,4 @@
-var assetPlan = {
+const assetPlan = {
   '1': {
     t_bills: 30,
     bonds: 30,
