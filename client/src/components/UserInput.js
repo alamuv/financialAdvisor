@@ -8,7 +8,6 @@ class UserInput extends React.Component {
     super(props);
     this.state = {
       riskLevel: 5,
-      amount: 0,
       assetAlloc: {}
     }
   }

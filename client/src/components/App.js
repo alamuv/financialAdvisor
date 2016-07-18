@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import UserInput from './UserInput';
+import Header from './Header'
 
 const App = () => (
   <div>
-    <div className="center heading">{'Asset Distribution Estimator'}</div>
+    <Header />
     <UserInput />
   </div>
 );
