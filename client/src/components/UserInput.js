@@ -3,9 +3,6 @@ import ReactSlider from 'react-rangeslider';
 import assetPlan from '../../data/data';
 import {PieTooltip, SimpleTooltip} from 'react-d3-tooltip';
 import {PieChart} from 'react-d3-basic';
-// import AssetAlloc from './AssetAlloc';
-// import {Doughnut} from 'react-chartjs';
-// import Chart from 'react-chartjs';
 
 class UserInput extends React.Component {
   constructor(props) {
@@ -63,7 +60,6 @@ class UserInput extends React.Component {
     return (
       <div className="center donut">
         <PieTooltip
-          // title= {"Asset Distribution"}
           data= {chartSeries}
           width= {width}
           height= {height}
@@ -105,7 +101,7 @@ class UserInput extends React.Component {
         </div>
         <br/>
         <br/>
-        <div className="subheading">Asset Distribution for Risk Level <span className="riskLevel">{this.state.riskLevel}</span></div> 
+        <div className="subheading">{'Asset Distribution for Risk Level '}<span className="riskLevel">{this.state.riskLevel}</span></div> 
         <div className=".svg-container">
           {this.renderDonut()}
           {this.responsiveDonut()}
@@ -116,63 +112,3 @@ class UserInput extends React.Component {
 }
 
 export default UserInput;
-  
-          // {this.renderChartJSDonut()}
-  // renderChartJSDonut(){
-  //   var chartData = [];
-  //   var color = [
-  //     {
-  //       color: '#F7464A',
-  //       highlight: '#FF5A5E'
-  //     },
-  //     {
-  //       color: '#949FB1',
-  //       highlight: '#A8B3C5'
-  //     },
-  //     {
-  //       color: '#FDB45C', 
-  //       highlight: '#FFC870'
-  //     },
-  //     {
-  //       color: '#46BFBD',
-  //       highlight: '#5AD3D1'
-  //     },
-  //     {
-  //       color: '#4D5360',
-  //       highlight: '#616774'
-  //     }
-  //   ];
-
-  //   var i = 0;
-  //   for (var key in this.state.assetAlloc) {
-  //     var data = {};
-  //     data.value = this.state.assetAlloc[key];
-  //     data.label = key;
-  //     data.color = color[i].color;
-  //     data.strokeColor = color[i].color;
-  //     data.pointColor = color[i].color;
-  //     data.highlight = color[i].highlight;
-  //     data.showInLegend = true;
-  //     chartData.push(data);
-  //     i++;
-  //   }
-
-  //   var chartOptions = {
-  //     tooltipTemplate: "<%= value %>%",
-  //     // legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
-  //     // responsive: true,
-  //   };
-  //   console.log(chartData)
-  //   var datasets = chartData.map(function (ds) { 
-  //     return <li key={ds.label}><span className="legend-color-box" style={{ backgroundColor: ds.strokeColor }}></span> { ds.label }</li>;
-  //   });
-
-  //   return (
-  //     <div id="something">
-  //       <Doughnut data={chartData} options={chartOptions} width="300" height="300"/>
-  //       <ul className="legend">
-  //         { datasets }
-  //       </ul>
-  //     </div>
-  //   );
-  // }
