@@ -2,7 +2,6 @@ import React from 'react';
 import ReactSlider from 'react-rangeslider';
 import assetPlan from '../../data/data';
 import {PieTooltip, SimpleTooltip} from 'react-d3-tooltip';
-import {PieChart} from 'react-d3-basic';
 
 class UserInput extends React.Component {
   constructor(props) {

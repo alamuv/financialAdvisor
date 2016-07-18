@@ -111,7 +111,7 @@ svg {
   background:#999;
 }
 .rangeslider-horizontal {
-  height:10px;
+  height:15px;
   border-radius:10px;
 }
 .rangeslider-horizontal .rangeslider__fill {
@@ -121,9 +121,9 @@ svg {
   top:0;
 }
 .rangeslider-horizontal .rangeslider__handle { 
-  width:20px;
-  height:20px;
+  width:30px;
+  height:30px;
   border-radius:40px;
-  top:-5px;
+  top:-7px;
 }
 
