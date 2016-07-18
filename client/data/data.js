@@ -1,73 +1,73 @@
 var assetPlan = {
   '1': {
-    Stocks: 6,
-    Commodities: 6,
-    Bonds: 4,
-    Cash: 80,
-    Index_Funds: 4
+    t_bills: 30,
+    bonds: 30,
+    index_funds: 20,
+    commodities: 10,
+    stocks: 10
   },
   '2': {
-    Stocks: 6,
-    Commodities: 6,
-    Bonds: 4,
-    Cash: 80,
-    Index_Funds: 4
+    t_bills: 30,
+    bonds: 20,
+    index_funds: 30,
+    commodities: 10,
+    stocks: 10
   },
   '3': {
-    Stocks: 6,
-    Commodities: 6,
-    Bonds: 4,
-    Cash: 80,
-    Index_Funds: 4
+    t_bills: 20,
+    bonds: 30,
+    index_funds: 30,
+    commodities: 10,
+    stocks: 10
   },
   '4': {
-    Stocks: 6,
-    Commodities: 6,
-    Bonds: 4,
-    Cash: 80,
-    Index_Funds: 4
+    t_bills: 20,
+    bonds: 20,
+    index_funds: 20,
+    commodities: 20,
+    stocks: 20
   },
   '5': {
-    Stocks: 40,
-    Commodities: 5,
-    Bonds: 20,
-    Cash: 5,
-    Index_Funds: 30
+    t_bills: 20,
+    bonds: 20,
+    index_funds: 10,
+    commodities: 20,
+    stocks: 30
   },
   '6': {
-    Stocks: 6,
-    Commodities: 6,
-    Bonds: 4,
-    Cash: 80,
-    Index_Funds: 4
+    t_bills: 20,
+    bonds: 20,
+    index_funds: 10,
+    commodities: 20,
+    stocks: 30
   },
   '7': {
-    Stocks: 6,
-    Commodities: 6,
-    Bonds: 4,
-    Cash: 80,
-    Index_Funds: 4
+    t_bills: 20,
+    bonds: 10,
+    index_funds: 20,
+    commodities: 20,
+    stocks: 30
   },
   '8': {
-    Stocks: 6,
-    Commodities: 6,
-    Bonds: 4,
-    Cash: 80,
-    Index_Funds: 4
+    t_bills: 10,
+    bonds: 10,
+    index_funds: 30,
+    commodities: 20,
+    stocks: 30
   },
   '9': {
-    Stocks: 60,
-    Commodities: 5,
-    Bonds: 20,
-    Cash: 10,
-    Index_Funds: 5
+    t_bills: 10,
+    bonds: 10,
+    index_funds: 20,
+    commodities: 30,
+    stocks: 30
   },
   '10': {
-    Stocks: 75,
-    Commodities: 5,
-    Bonds: 10,
-    Cash: 5,
-    Index_Funds: 5
+    t_bills: 15,
+    bonds: 10,
+    index_funds: 10,
+    commodities: 30,
+    stocks: 40
   }
 };
 

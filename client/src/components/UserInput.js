@@ -45,42 +45,53 @@ class UserInput extends React.Component {
     }
     var innerRadius = 50;
     var chartSeries = [];
-    var color = ["#aaeeee", "#7798BF", "#DF5353", "#DDDF0D", "#55BF3B"];
+    var color = ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"];
     
     var i = 0;
     for (var key in this.state.assetAlloc) {
+      var str = key.toUpperCase();
       var data = {};
-      data.field = key;
+      data.field = str;
       data.value = this.state.assetAlloc[key];
-      data.name = key;
+      data.name = str;
       data.color = color[i];
       chartSeries.push(data);
       i++;
     }
-
+    console.log(chartSeries)
     return (
-      <PieTooltip
-        // title= {"Asset Distribution"}
-        data= {chartSeries}
-        width= {width}
-        height= {height}
-        chartSeries= {chartSeries}
-        value = {value}
-        name = {name}
-        innerRadius = {innerRadius}
-        >
-        <SimpleTooltip value={valPercent}/>
-      </PieTooltip>
+      <div className="center donut">
+        <PieTooltip
+          // title= {"Asset Distribution"}
+          data= {chartSeries}
+          width= {width}
+          height= {height}
+          chartSeries= {chartSeries}
+          value = {value}
+          name = {name}
+          innerRadius = {innerRadius}
+          >
+          <SimpleTooltip value={valPercent}/>
+        </PieTooltip>
+      </div>
       );
   }
 
+  responsiveDonut() {
+    var el = document.querySelector("svg");
+    console.log('el', el)
+    if (el) {
+      el.setAttribute("viewBox", "130 50 410 300");
+      el.setAttribute("class", ".svg-content-responsive");
+    }
+  }
 
   render () {
     return (
       <div>
 
-        <div className="subheader">{Choose a Risk Level for your Portfolio}</div>
-        <div className="slider">
+        <div className="subheading">{'Choose a Risk Level for your Portfolio'}</div>
+        <div className="center slider">
           <ReactSlider
             min={1}
             max={10}
@@ -88,13 +99,15 @@ class UserInput extends React.Component {
             value={this.state.riskLevel}
             className='horizontal-slider'
             onChange={(value)=>this.handleChange(value)} /> 
-          <span id="lowrisk">{'1 (Low Risk)'}</span>
-          <span id="highrisk">{'10 (High Risk)'}</span>
+          <span id="lowrisk">{'Low Risk'}</span>
+          <span id="highrisk">{'High Risk'}</span>
         </div>
-        
-        <div className="subheader">Asset Distribution for Risk Level: {this.state.riskLevel}</div> 
-        <div>
+        <br/>
+        <br/>
+        <div className="subheading">Asset Distribution for Risk Level <span className="riskLevel">{this.state.riskLevel}</span></div> 
+        <div className=".svg-container">
           {this.renderDonut()}
+          {this.responsiveDonut()}
         </div>
       </div>
     );
