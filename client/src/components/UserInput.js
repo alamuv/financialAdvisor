@@ -50,6 +50,7 @@ class UserInput extends React.Component {
     var i = 0;
     for (var key in this.state.assetAlloc) {
       var str = key.toUpperCase();
+      str = str.replace(/_/g, " ");
       var data = {};
       data.field = str;
       data.value = this.state.assetAlloc[key];
@@ -99,8 +100,8 @@ class UserInput extends React.Component {
             value={this.state.riskLevel}
             className='horizontal-slider'
             onChange={(value)=>this.handleChange(value)} /> 
-          <span id="lowrisk">{'Low Risk'}</span>
-          <span id="highrisk">{'High Risk'}</span>
+          <div id="lowrisk">{'Low Risk'}</div>
+          <div id="highrisk">{'High Risk'}</div>
         </div>
         <br/>
         <br/>
