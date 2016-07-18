@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+// import {Label} from 'react-bootstrap';
 import UserInput from './UserInput';
 
 const App = () => (
   <div>
-    <h1>Asset Distribution Estimator</h1>
+    <div className="center heading">Asset Distribution Estimator</div>
     <UserInput />
   </div>
 );

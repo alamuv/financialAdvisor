@@ -38,7 +38,6 @@ class UserInput extends React.Component {
       return d.name;
     };
     var value = function(d) {
-      console.log(d.value)
       return d.value;
     };
     var valPercent = function(d) {
@@ -46,7 +45,7 @@ class UserInput extends React.Component {
     }
     var innerRadius = 50;
     var chartSeries = [];
-    var color = ['#F7464A', '#949FB1', '#FDB45C', '#46BFBD', '#4D5360'];
+    var color = ["#aaeeee", "#7798BF", "#DF5353", "#DDDF0D", "#55BF3B"];
     
     var i = 0;
     for (var key in this.state.assetAlloc) {
@@ -75,20 +74,28 @@ class UserInput extends React.Component {
       );
   }
 
+
   render () {
     return (
       <div>
-        <ReactSlider
-          min={1}
-          max={10}
-          step={1}
-          value={this.state.riskLevel}
-          className='horizontal-slider'
-          onChange={(value)=>this.handleChange(value)} /> 
-        <span id="lowrisk">{'1 (Low Risk)'}</span>
-        <span id="highrisk">{'10 (High Risk)'}</span>
-        <div>Asset Distribution for Risk Level: {this.state.riskLevel}</div> 
-        {this.renderDonut()}
+
+        <div className="subheader">{Choose a Risk Level for your Portfolio}</div>
+        <div className="slider">
+          <ReactSlider
+            min={1}
+            max={10}
+            step={1}
+            value={this.state.riskLevel}
+            className='horizontal-slider'
+            onChange={(value)=>this.handleChange(value)} /> 
+          <span id="lowrisk">{'1 (Low Risk)'}</span>
+          <span id="highrisk">{'10 (High Risk)'}</span>
+        </div>
+        
+        <div className="subheader">Asset Distribution for Risk Level: {this.state.riskLevel}</div> 
+        <div>
+          {this.renderDonut()}
+        </div>
       </div>
     );
   }
@@ -96,11 +103,8 @@ class UserInput extends React.Component {
 
 export default UserInput;
   
-          // <AssetAlloc riskLevel={this.state.riskLevel}/>  
-  
-
-    
-  // renderDonut(){
+          // {this.renderChartJSDonut()}
+  // renderChartJSDonut(){
   //   var chartData = [];
   //   var color = [
   //     {
@@ -108,16 +112,16 @@ export default UserInput;
   //       highlight: '#FF5A5E'
   //     },
   //     {
-  //       color: '#46BFBD',
-  //       highlight: '#5AD3D1'
+  //       color: '#949FB1',
+  //       highlight: '#A8B3C5'
   //     },
   //     {
   //       color: '#FDB45C', 
   //       highlight: '#FFC870'
   //     },
   //     {
-  //       color: '#949FB1',
-  //       highlight: '#A8B3C5'
+  //       color: '#46BFBD',
+  //       highlight: '#5AD3D1'
   //     },
   //     {
   //       color: '#4D5360',
@@ -150,9 +154,9 @@ export default UserInput;
   //   });
 
   //   return (
-  //     <div>
-  //       <Doughnut data={chartData} options={chartOptions} />
-  //       <ul className={"legend"}>
+  //     <div id="something">
+  //       <Doughnut data={chartData} options={chartOptions} width="300" height="300"/>
+  //       <ul className="legend">
   //         { datasets }
   //       </ul>
   //     </div>
