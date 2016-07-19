@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import {expect} from 'chai';
-
+import Data from '../../data/data';
 import AssetPlan from '../../src/components/AssetPlan';
 
 var riskLevel = 8;
@@ -17,8 +17,4 @@ describe('<AssetPlan/>', () => {
     expect(wrapper.props().riskLevel).to.be.defined;
   });
 
-  it('should have props for risk level', () => {
-    const wrapper = shallow(<AssetPlan/>);
-    expect(wrapper.props().riskLevel).to.be.defined;
-  });
 });

@@ -5,7 +5,8 @@ import RiskInput from './RiskInput';
 import AssetPlan from './AssetPlan';
 import Label from '../../data/label';
 
-
+//App holds the risk level as its state
+//When the risk level changes,App re-renders
 class App extends React.Component {
   constructor(props) {
     super(props);

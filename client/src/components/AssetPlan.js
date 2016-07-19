@@ -8,10 +8,12 @@ class AssetPlan extends React.Component {
     super(props);
   }
 
+  // invoke responsiveDonut after the component renders and an svg element exists
   componentDidMount() {
     this.responsiveDonut();
   }
 
+  // renderDonut follows react-d3-tooltip libraries pie chart to render a Donut
   renderDonut() {
     const width = 700,
      height = 400,
@@ -25,8 +27,9 @@ class AssetPlan extends React.Component {
     const valPercent = function(d) {
       return d.value.toString+'%';
     }
+    const color = ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"];
 
-    var color = ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"];
+    //chartSeries holds the data in the format required by the library to render donut and the legend
     var chartSeries = [];
     var asset = assetPlan[this.props.riskLevel];
     
@@ -59,6 +62,7 @@ class AssetPlan extends React.Component {
       );
   }
 
+  // responsiveDonut sets viewBox attribute on the svg element to render a responsivesvg
   responsiveDonut() {
     var el = document.querySelector("svg");
     console.log('el', el, document.querySelector("svg"))
