@@ -1,4 +1,4 @@
-// This file keeps track of all labels used as a step for multilingual support
+// This file keeps track of all labels used, as a step for multilingual support
 const label = {
   estimatorHeader: 'Asset Distribution Estimator',
   riskInputHeader: 'Choose a Risk Level for your Portfolio',

@@ -1,3 +1,5 @@
+// distribution of assets for risk levels are stored as an object of objects, 
+// containing risk levels as properties, and an object containing the asset distribution as its values
 const assetPlan = {
   '1': {
     t_bills: 30,
