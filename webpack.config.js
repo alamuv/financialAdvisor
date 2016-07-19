@@ -14,8 +14,6 @@ module.exports = {
     ]
   },
   devServer: {
-    hot: true,
-    inline: true,
     port: 8000,
     historyApiFallback: {
       index: 'index.html'
