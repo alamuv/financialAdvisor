@@ -4,8 +4,8 @@
   "description": "user can view financial distribution chart based on the risk level he inputs",
   "main": "server/server.js",
   "scripts": {
-    "test": "mocha tests",
-    "start": "nodemon server/server.js"
+    "test": "mocha -w client/test/helpers/browser.js client/test/spec/*.spec.js",
+    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./"
   },
   "repository": {
     "type": "git",
