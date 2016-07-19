@@ -43,7 +43,7 @@ class AssetPlan extends React.Component {
       i++;
     }
     return (
-      <div className="center donut">
+      <div className="center">
         <PieTooltip
           data= {chartSeries}
           width= {width}
@@ -70,7 +70,7 @@ class AssetPlan extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="donut">
         <div className="subheading">{Label.distributionHeader}<span className="riskLevel">{this.props.riskLevel}</span></div> 
         <div className=".svg-container">
           {this.renderDonut()}
