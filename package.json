@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "test": "mocha -w client/test/helpers/browser.js client/test/spec/*.spec.js",
-    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./"
+    "start": "webpack-dev-server --progress --colors --watch --display-error-details --display-cached --content-base ./"
   },
   "repository": {
     "type": "git",
@@ -38,7 +38,6 @@
     "jsdom": "^9.4.1",
     "mocha": "^2.5.3",
     "react-addons-test-utils": "^15.2.1",
-    "supertest": "^1.2.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
