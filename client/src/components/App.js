@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserInput from './UserInput';
-import Header from './Header'
+import Header from './Header';
+import RiskInput from './RiskInput';
+import AssetPlan from './AssetPlan';
+import Label from '../../data/label';
 
-const App = () => (
-  <div>
-    <Header />
-    <UserInput />
-  </div>
-);
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      riskLevel: Label.initialRiskLevel
+    }
+  }
+
+  render () {
+    return (
+      <div>
+        <Header />
+        <RiskInput riskLevel={this.state.riskLevel} onRiskChange={riskLevel => this.setState({riskLevel})}/>
+        <AssetPlan riskLevel={this.state.riskLevel} />
+      </div>
+    );
+  }
+}
 
 export default App;
