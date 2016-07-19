@@ -1,7 +1,7 @@
 {
   "name": "financialadvisor",
   "version": "1.0.0",
-  "description": "user can view financial distribution chart based on the risk level he inputs",
+  "description": "Provides the percentage distribution of assets based on chosen financial risk",
   "main": "server/server.js",
   "scripts": {
     "test": "mocha -w client/test/helpers/browser.js client/test/spec/*.spec.js",
