@@ -11,13 +11,15 @@ class AssetPlan extends React.Component {
   // invoke responsiveDonut after the component renders and an svg element exists
   componentDidMount() {
     this.responsiveDonut();
+    this.removeLegend();
   }
 
   // renderDonut follows react-d3-tooltip libraries pie chart to render a Donut
   renderDonut() {
     const width = 700,
      height = 400,
-     innerRadius = 50;
+     innerRadius = 50,
+     title = 'asset plan';
     const name = function(d) {
       return d.name;
     };
@@ -25,7 +27,8 @@ class AssetPlan extends React.Component {
       return d.value;
     };
     const valPercent = function(d) {
-      return d.value.toString+'%';
+
+      return d.value.toString() + ' %';
     }
     const color = ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"];
 
@@ -48,15 +51,17 @@ class AssetPlan extends React.Component {
     return (
       <div className="center">
         <PieTooltip
+          title = {title}
           data= {chartSeries}
           width= {width}
           height= {height}
           chartSeries= {chartSeries}
           value = {value}
           name = {name}
+          showLegend = {false}
           innerRadius = {innerRadius}
           >
-          <SimpleTooltip value={valPercent}/>
+          <SimpleTooltip />
         </PieTooltip>
       </div>
       );
@@ -65,10 +70,19 @@ class AssetPlan extends React.Component {
   // responsiveDonut sets viewBox attribute on the svg element to render a responsivesvg
   responsiveDonut() {
     var el = document.querySelector("svg");
-    console.log('el', el, document.querySelector("svg"))
     if (el) {
-      el.setAttribute("viewBox", "130 50 410 300");
+      el.setAttribute("viewBox", "100 50 410 300");
+      el.setAttribute("preserveAspectRatio", "xMinYMin meet");
       el.setAttribute("class", ".svg-content-responsive");
+    }
+  }
+
+  removeLegend() {
+    var legends = document.getElementsByClassName('legend');
+
+    while (legends[0]) {
+      legends[0].parentNode.removeChild(legends[0]);
+      console.log(legends);
     }
   }
 

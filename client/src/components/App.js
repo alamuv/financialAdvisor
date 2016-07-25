@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
+import DollarInput from './DollarInput';
 import RiskInput from './RiskInput';
 import AssetPlan from './AssetPlan';
 import Label from '../../data/label';
@@ -12,15 +13,18 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      dollarValue: Label.dollarValue,
       riskLevel: Label.initialRiskLevel
     }
   }
 
   render () {
+    console.log(this.state.dollarValue);
     return (
       <div>
         <Header />
         <RiskInput riskLevel={this.state.riskLevel} onRiskChange={riskLevel => this.setState({riskLevel})}/>
+        <DollarInput onDollarValChange={dollarValue => this.setState({dollarValue})}/>
         <AssetPlan riskLevel={this.state.riskLevel} />
       </div>
     );

@@ -1,3 +1,7 @@
+input {
+  max-width: 500px;
+}
+
 .heading {
   color: #343434;
   font-weight: bold;
@@ -16,7 +20,7 @@
   font-size: 24px;
   line-height: 100%;
   text-align: center;
-  margin-top: 1%;
+  margin-top: 2%;
   margin-bottom: 2%;
 }
 
@@ -26,16 +30,19 @@
   width: 50%;
 }
 
+.dollar {
+  margin-top: 5%;
+}
+
 .slider {
   max-width: 500px;
 }
 
 .donut {
-  margin-top: 8%;
+  margin-top: 5%;
 }
 
 .riskLevel {
-  /*margin-left: %;*/
   font-family: sans-serif;
   font-size: 28px;
   font-weight: bold;
@@ -48,7 +55,6 @@
 
 #highrisk {
   float: right;
-  margin-left: 60%;
   display: inline;
 }
 
@@ -59,7 +65,7 @@
   position: relative;
 }
 
-iframe {
+iframe html {
   position: absolute;
   top: 0;
   left: 0;
@@ -81,18 +87,19 @@ svg {
 }
 
 .svg-content-responsive { 
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: inline;
+  margin: auto;
 }
 
 .legend {
   max-width: 100%
 }
 
+@media(max-width:768px) {
+
+}
 /* -- CSS from react-rangeslider -- */
-*,:after,:before{margin:0;padding:0;box-sizing:border-box}body{margin:0;padding:0;font-family:Helvetica,sans-serif;font-weight:400;font-size:14px;line-height:24px;color:#333}#mount{margin:20px auto 0;padding:40px;position:relative}#mount hr{height:1px;margin:40px 0;background:#ddd;border:none}#mount h1{margin:0 auto 20px;text-align:center;font-weight:400;font-size:24px}#mount h2{margin:0 0 20px;font-weight:600;font-size:20px}#mount p{margin-bottom:40px}#mount a{color:blue}#mount header{text-align:center}#mount section>div{text-align:center;font-size:20px;font-weight:700}#mount footer{margin:60px auto 40px}#mount footer p{margin:2px 0 0;text-align:center;font-size:12px}@media screen and (min-width:1200px){#mount{width:600px}}
+/**,:after,:before{margin:0;padding:0;box-sizing:border-box}body{margin:0;padding:0;font-family:Helvetica,sans-serif;font-weight:400;font-size:14px;line-height:24px;color:#333}#mount{margin:20px auto 0;padding:40px;position:relative}#mount hr{height:1px;margin:40px 0;background:#ddd;border:none}#mount h1{margin:0 auto 20px;text-align:center;font-weight:400;font-size:24px}#mount h2{margin:0 0 20px;font-weight:600;font-size:20px}#mount p{margin-bottom:40px}#mount a{color:blue}#mount header{text-align:center}#mount section>div{text-align:center;font-size:20px;font-weight:700}#mount footer{margin:60px auto 40px}#mount footer p{margin:2px 0 0;text-align:center;font-size:12px}@media screen and (min-width:1200px){#mount{width:600px}}*/
 .rangeslider {
   position:relative;
   background:#e6e6e6;
