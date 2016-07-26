@@ -1,7 +1,6 @@
 import React from 'react';
 import Label from '../../data/label';
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
-
 var _debounce = require('lodash/debounce');
 
 //DollarInput gets onDollarValChange callback as props from App
@@ -17,18 +16,13 @@ class DollarInput extends React.Component {
   }
 
   getValidationState() {
-    if (this.state.value > 0) return 'success';
-    else if (this.state.value < 0) return 'error';
+    if (this.state.value >= 500) return 'success';
+    else if (this.state.value < 500) return 'error';
   }
 
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-    this.props.onDollarValChange(this.state.value);
-    this.clearInput();
-  }
-
-  clearInput() {
-
+  handleChange(value) {
+    this.setState({value});
+    this.props.onDollarValChange(value);
   }
 
   render() {
@@ -38,12 +32,12 @@ class DollarInput extends React.Component {
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>{Label.dollarValue}</ControlLabel>
           <FormControl
             type="text"
             value={this.state.value}
+            ref="input"
             placeholder={Label.dollarValue}
-            onChange={() => _debounce(this.handleChange.bind(this), 500)}
+            onChange={event => this.handleChange(event.target.value)}
           />
           <FormControl.Feedback />
           <HelpBlock>Enter a number greater than 500($500).</HelpBlock>

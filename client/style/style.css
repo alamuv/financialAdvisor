@@ -1,13 +1,19 @@
 input {
   max-width: 500px;
 }
+/*
+@media (max-width: 500px)
+.heading {
+  font-size: 2em;
+  font-weight: bold;
+}*/
 
 .heading {
   color: #343434;
   font-weight: bold;
   font-family: "Circular","Helvetica Neue",Helvetica,Arial,sans-serif;   
-  font-size: 32px;
   line-height: 100%;
+  font-size: 2em;
   text-transform: uppercase;
   padding: 2%;
   text-align: center;

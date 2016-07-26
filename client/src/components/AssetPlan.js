@@ -82,11 +82,11 @@ class AssetPlan extends React.Component {
 
     while (legends[0]) {
       legends[0].parentNode.removeChild(legends[0]);
-      console.log(legends);
     }
   }
 
   render () {
+    console.log('asset plan dollarValue',this.props.dollarValue);
     return (
       <div className="donut">
         <div className="subheading">{Label.distributionHeader}<span className="riskLevel">{this.props.riskLevel}</span></div> 
