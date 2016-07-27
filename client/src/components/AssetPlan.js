@@ -1,7 +1,7 @@
 import React from 'react';
 import assetPlan from '../../data/data';
 import Label from '../../data/label';
-import {PieTooltip, SimpleTooltip} from 'react-d3-tooltip';
+import c3 from 'c3';
 
 class AssetPlan extends React.Component {
   constructor(props) {
@@ -10,78 +10,60 @@ class AssetPlan extends React.Component {
 
   // invoke responsiveDonut after the component renders and an svg element exists
   componentDidMount() {
-    this.responsiveDonut();
-    this.removeLegend();
-  }
+    this.renderDonut();
 
   // renderDonut follows react-d3-tooltip libraries pie chart to render a Donut
   renderDonut() {
-    const width = 700,
-     height = 400,
-     innerRadius = 50,
-     title = 'asset plan';
-    const name = function(d) {
-      return d.name;
-    };
-    const value = function(d) {
-      return d.value;
-    };
-    const valPercent = function(d) {
+    let columns = [];
+    let data = assetPlan[this.props.riskLevel];
 
-      return d.value.toString() + ' %';
+    for (let key in data) {
+      var str = key.replace(/_/g, " ");
+      let el = [];
+      el[0] = str;
+
+      if (this.props.dollarValue > 100) {
+        el[1] = data[key]/100 * this.props.dollarValue;
+        console.log('dollarValue', el);
+      } else {
+        el[1] = data[key];
+        console.log('no dollarValue', el);
+      }
+      columns.push(el);
     }
-    const color = ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"];
-
-    //chartSeries holds the data in the format required by the library to render donut and the legend
-    var chartSeries = [];
-    var asset = assetPlan[this.props.riskLevel];
     
-    var i = 0;
-    for (var key in asset) {
-      var str = key.toUpperCase();
-      str = str.replace(/_/g, " ");
-      var data = {};
-      data.field = str;
-      data.value = asset[key];
-      data.name = str;
-      data.color = color[i];
-      chartSeries.push(data);
-      i++;
-    }
-    return (
-      <div className="center">
-        <PieTooltip
-          title = {title}
-          data= {chartSeries}
-          width= {width}
-          height= {height}
-          chartSeries= {chartSeries}
-          value = {value}
-          name = {name}
-          showLegend = {false}
-          innerRadius = {innerRadius}
-          >
-          <SimpleTooltip />
-        </PieTooltip>
-      </div>
-      );
+    let chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: columns,
+        type: 'donut'
+      },
+      donut: {
+        label: {
+            format: function (value, ratio, id) {
+                return d3.format('$')(value);
+            }
+        }
+      },
+      color: {
+        pattern: ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"]
+      },
+      tooltip: {
+        format: {
+          name: function (name, ratio, id, index) { return name; }
+        }
+      }
+
+    });
   }
 
   // responsiveDonut sets viewBox attribute on the svg element to render a responsivesvg
   responsiveDonut() {
     var el = document.querySelector("svg");
     if (el) {
-      el.setAttribute("viewBox", "100 50 410 300");
+      el.setAttribute("viewBox", "100 10 410 300");
       el.setAttribute("preserveAspectRatio", "xMinYMin meet");
       el.setAttribute("class", ".svg-content-responsive");
-    }
-  }
-
-  removeLegend() {
-    var legends = document.getElementsByClassName('legend');
-
-    while (legends[0]) {
-      legends[0].parentNode.removeChild(legends[0]);
     }
   }
 
@@ -91,6 +73,7 @@ class AssetPlan extends React.Component {
       <div className="donut">
         <div className="subheading">{Label.distributionHeader}<span className="riskLevel">{this.props.riskLevel}</span></div> 
         <div className=".svg-container">
+          <div id="chart">hi</div>
           {this.renderDonut()}
         </div>
       </div>

@@ -16,8 +16,8 @@ class DollarInput extends React.Component {
   }
 
   getValidationState() {
-    if (this.state.value >= 500) return 'success';
-    else if (this.state.value < 500) return 'error';
+    if (this.state.value >= 100) return 'success';
+    else if (this.state.value < 100) return 'error';
   }
 
   handleChange(value) {
@@ -25,26 +25,46 @@ class DollarInput extends React.Component {
     this.props.onDollarValChange(value);
   }
 
+  handleEnter(event) {
+    if(event.key === 'Enter') {
+      this.clearInput();
+    }
+  }
+
+  clearInput() {
+    this.setState({value: ''})
+  }
+
   render() {
     return (
-      <form className='center dollar'>
-        <FormGroup
-          controlId="formBasicText"
-          validationState={this.getValidationState()}
-        >
-          <FormControl
-            type="text"
-            value={this.state.value}
-            ref="input"
-            placeholder={Label.dollarValue}
-            onChange={event => this.handleChange(event.target.value)}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Enter a number greater than 500($500).</HelpBlock>
-        </FormGroup>
-      </form>
+      <div className='center dollar'>
+        <input id="dollarVal" className="form-control"
+          type="text"
+          value={this.state.value}
+          placeholder={Label.dollarValue}
+          onChange={event => this.handleChange(event.target.value)}
+          onKeyPress={event => this.handleEnter(event)} />
+      </div>
     )
   }
 }
 
 export default DollarInput;
+    // return (
+    //   <form className='center dollar'>
+    //     <FormGroup
+    //       controlId="formBasicText"
+    //       validationState={this.getValidationState()}
+    //     >
+    //       <FormControl
+    //         type="text"
+    //         value={this.state.value}
+    //         ref="input"
+    //         placeholder={Label.dollarValue}
+    //         onChange={event => this.handleChange(event.target.value)}
+    //       />
+    //       <FormControl.Feedback />
+    //       <HelpBlock>{Label.dollarValueHelp}</HelpBlock>
+    //     </FormGroup>
+    //   </form>
+    // )

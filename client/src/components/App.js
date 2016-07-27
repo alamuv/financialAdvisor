@@ -20,9 +20,10 @@ class App extends React.Component {
   }
 
   setDollarVal(dollarValue) {
-    if (dollarValue > 500 && dollarValue !== '') {
+    if (dollarValue > 100 && dollarValue !== '') {
       this.setState({dollarValue});
     }
+    console.log('app', this.state.dollarValue);
   }
 
   render () {
