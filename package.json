@@ -19,6 +19,7 @@
   "homepage": "https://github.com/alamuv/financialAdvisor#readme",
   "dependencies": {
     "c3": "^0.4.11",
+    "griddle-react": "^0.6.1",
     "lodash": "^4.14.0",
     "react": "^15.2.1",
     "react-bootstrap": "^0.29.5",

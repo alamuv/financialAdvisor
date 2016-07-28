@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactSlider from 'react-rangeslider';
-import Label from '../../data/label';
+import Label from '../../../data/label';
 
 //Risk Input gets the risk level and an onRiskChange callback as props
 //onRiskChange is invoked when an onChange event occurs on the slider

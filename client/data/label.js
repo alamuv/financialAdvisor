@@ -7,7 +7,9 @@ const label = {
   dollarValue: 'How much are you planning to invest?',
   dollarValueHelp: 'Enter a number greater than 100($100).',
   distributionHeader: 'Asset Distribution for Risk Level ',
-  initialRiskLevel: 5
+  portfolioReport: 'Portfolio Report',
+  initialRiskLevel: 5,
+  initialDollarValue: 100
 };
 
 module.exports = label;

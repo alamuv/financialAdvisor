@@ -1,7 +1,6 @@
 import React from 'react';
-import Label from '../../data/label';
+import Label from '../../../data/label';
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
-var _debounce = require('lodash/debounce');
 
 //DollarInput gets onDollarValChange callback as props from App
 //onDollarValChange is invoked when an onChange event occurs on the form

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
-import DollarInput from './DollarInput';
-import RiskInput from './RiskInput';
-import AssetPlan from './AssetPlan';
+import Header from './header/Header';
+import DollarInput from './input/DollarInput';
+import RiskInput from './input/RiskInput';
+import AssetPlan from './assetPlan/AssetPlan';
 import Label from '../../data/label';
 var _debounce = require('lodash/debounce');
 
@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      dollarValue: '',
+      dollarValue: Label.initialDollarValue,
       riskLevel: Label.initialRiskLevel
     }
   }

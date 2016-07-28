@@ -10,7 +10,7 @@
   font-weight: bold;
   font-family: "Circular","Helvetica Neue",Helvetica,Arial,sans-serif;   
   line-height: 100%;
-  font-size: 2em;
+  /*font-size: 2em;*/
   text-transform: uppercase;
   padding: 2%;
   text-align: center;
@@ -27,6 +27,9 @@
   margin-bottom: 2%;
 }
 
+.donut {
+  max-width: 500px;
+}
 
 .center {
   display: block;
@@ -39,17 +42,32 @@
   margin-top: 5%;
 }
 
-.dollar input {
-  width: 500px;
-}
-
 .slider {
   max-width: 500px;
 }
 
-.donut {
-  margin-top: 5%;
+table
+{ 
+  margin-left: auto;
+  margin-right: auto;
+  border:1px solid #DDD;
 }
+
+.griddle th{
+  background-color:#EDEDEF;
+  border:0px;
+  border-bottom:1px solid #DDD;
+  color:#222;
+  padding:5px;
+}
+
+.griddle td{
+  padding:5px;
+  background-color:#FFF;
+  border-top-color:#DDD;
+  color:#222;
+}
+
 
 .riskLevel {
   font-family: sans-serif;
