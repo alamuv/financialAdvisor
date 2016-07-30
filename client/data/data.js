@@ -33,8 +33,8 @@ const assetPlan = {
     t_bills: 20,
     bonds: 20,
     index_funds: 10,
-    commodities: 20,
-    stocks: 30
+    commodities: 30,
+    stocks: 20
   },
   '6': {
     t_bills: 20,
