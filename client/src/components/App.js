@@ -23,11 +23,10 @@ class App extends React.Component {
     if (dollarValue > 100 && dollarValue !== '') {
       this.setState({dollarValue});
     }
-    console.log('app', this.state.dollarValue);
   }
 
   render () {
-    const debounceDollarValChange = _debounce((dollarValue) => this.setDollarVal(dollarValue), 300);
+    const debounceDollarValChange = _debounce((dollarValue) => this.setDollarVal(dollarValue), 500);
     return (
       <div>
         <Header />

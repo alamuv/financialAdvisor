@@ -16,14 +16,14 @@ class AssetTable extends React.Component {
       var row = {};
       row.asset = key.replace(/_/g, " ");
       row.percentage = data[key]+'%';
-      row.value = '$' + data[key]/100 * this.props.dollarValue;
+      row.value = '$' + Math.round(data[key]/100 * this.props.dollarValue);
       tableData.push(row);
     }
 
     return (
       <Griddle
         results={tableData}
-        tableClassName='assettable'
+        tableClassName="assettable"
         useGriddleStyles={false}
         showPager={false}
         columns={["asset", "percentage", "value"]}/>
@@ -32,7 +32,7 @@ class AssetTable extends React.Component {
 
   render () {
     return (
-      <div className="table">
+      <div>
         {this.renderTable()}
       </div>
     );

@@ -1,5 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import { Router, DefaultRoute, Route, RouteHandler, hashHistory } from 'react-router';
 import App from './components/App';
+import GeneratePortfolio from './components/portfolioReport/GeneratePortfolio';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={App} />
+    <Route path="/print/:riskLevel/:dollarValue" component={GeneratePortfolio}/>
+  </Router>
+), document.getElementById('app'));
+
+// render(<App />, document.getElementById('app'));

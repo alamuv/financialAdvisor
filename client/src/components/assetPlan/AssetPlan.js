@@ -2,7 +2,7 @@ import React from 'react';
 import Label from '../../../data/label';
 import AssetDonut from './AssetDonut';
 import AssetTable from './AssetTable';
-import PortfolioReport from './PortfolioReport';
+import {Link} from 'react-router';
 
 const AssetPlan = ({riskLevel, dollarValue}) => {
   return (
@@ -13,24 +13,20 @@ const AssetPlan = ({riskLevel, dollarValue}) => {
         <span className="riskLevel">${dollarValue}</span>
       </div> 
       <div className="center donut">
-        <PortfolioReport riskLevel={riskLevel} dollarValue={dollarValue} />
+        <div id="print">
+          <Link to={`/print/${riskLevel}/${dollarValue}`}>
+            Print
+          </Link>
+        </div>
         <AssetDonut riskLevel={riskLevel} dollarValue={dollarValue} />
       </div>
 
       <br />
-      <AssetTable riskLevel={riskLevel} dollarValue={dollarValue} />
+      <div className="table">
+        <AssetTable riskLevel={riskLevel} dollarValue={dollarValue} />
+      </div>
     </div>
   );
 }
 
 export default AssetPlan;
-
-  // // responsiveDonut sets viewBox attribute on the svg element to render a responsivesvg
-  // responsiveDonut() {
-  //   var el = document.querySelector("svg");
-  //   if (el) {
-  //     el.setAttribute("viewBox", "100 10 410 300");
-  //     el.setAttribute("preserveAspectRatio", "xMinYMin meet");
-  //     el.setAttribute("class", ".svg-content-responsive");
-  //   }
-  // }

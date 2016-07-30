@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "test": "mocha -w client/test/helpers/browser.js client/test/spec/*.spec.js",
-    "start": "webpack-dev-server --progress --colors --inline"
+    "start": "webpack-dev-server --inline --content-base ."
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     "react-d3-basic": "^1.6.11",
     "react-d3-tooltip": "^1.4.14",
     "react-dom": "^15.2.1",
-    "react-rangeslider": "^1.0.3"
+    "react-rangeslider": "^1.0.3",
+    "react-router": "^2.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",

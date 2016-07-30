@@ -10,6 +10,7 @@ class AssetDonut extends React.Component {
   // invoke responsiveDonut after the component renders and an svg element exists
   componentDidMount() {
     this.renderDonut();
+    // this.responsiveDonut();
   }
 
   // renderDonut uses c3 library pie chart to render a Donut
@@ -23,17 +24,15 @@ class AssetDonut extends React.Component {
       el[0] = str;
 
       if (this.props.dollarValue > 100) {
-        el[1] = data[key]/100 * this.props.dollarValue;
-        console.log('dollarValue', el);
+        el[1] = Math.round(data[key]/100 * this.props.dollarValue);
       } else {
         el[1] = data[key];
-        console.log('no dollarValue', el);
       }
       columns.push(el);
     }
 
     let chart = c3.generate({
-      bindto: '#chart',
+      bindto: '.chart',
       data: {
         columns: columns,
         type: 'donut',
@@ -52,10 +51,17 @@ class AssetDonut extends React.Component {
     });
   }
 
+  responsiveDonut() {
+    var el = document.querySelector("svg");
+    console.log('el', el, document.querySelector("svg"))
+    if (el) {
+      el.setAttribute("viewBox", "0 0 375 320");
+    }
+  }
+
   render() {
     return (
-      <div className="svg-container">
-        <div id="chart"></div>
+      <div className="chart">
         {this.renderDonut()}
       </div>
     );
