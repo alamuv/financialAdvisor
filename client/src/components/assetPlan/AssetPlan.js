@@ -19,10 +19,7 @@ const AssetPlan = ({riskLevel, dollarValue}) => {
           </Link>
         </div>
         <AssetDonut riskLevel={riskLevel} dollarValue={dollarValue} />
-      </div>
-
       <br />
-      <div className="table">
         <AssetTable riskLevel={riskLevel} dollarValue={dollarValue} />
       </div>
     </div>

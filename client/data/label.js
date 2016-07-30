@@ -5,7 +5,7 @@ const label = {
   lowRisk: '1 Low Risk',
   highRisk: 'High Risk 10',
   dollarValue: 'How much are you planning to invest?',
-  dollarValueHelp: 'Enter a number greater than 100($100).',
+  dollarValueHelp: 'Enter a value greater than $100',
   distributionHeader: 'Asset Distribution for Risk Level ',
   portfolioReport: 'Portfolio Report',
   initialRiskLevel: 5,

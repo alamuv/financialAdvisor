@@ -51,14 +51,6 @@ class AssetDonut extends React.Component {
     });
   }
 
-  responsiveDonut() {
-    var el = document.querySelector("svg");
-    console.log('el', el, document.querySelector("svg"))
-    if (el) {
-      el.setAttribute("viewBox", "0 0 375 320");
-    }
-  }
-
   render() {
     return (
       <div className="chart">

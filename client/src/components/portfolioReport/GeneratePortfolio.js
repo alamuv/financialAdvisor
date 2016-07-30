@@ -12,48 +12,48 @@ class GeneratePortfolio extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.renderDonut();
-  }
+  // componentDidMount() {
+  //   this.renderDonut();
+  // }
 
   // renderDonut uses c3 library pie chart to render a Donut
-  renderDonut() {
-    const {riskLevel, dollarValue} = this.props.params;
-    let columns = [];
-    let data = assetPlan[riskLevel];
+  // renderDonut() {
+  //   const {riskLevel, dollarValue} = this.props.params;
+  //   let columns = [];
+  //   let data = assetPlan[riskLevel];
 
-    for (let key in data) {
-      var str = key.replace(/_/g, " ");
-      let el = [];
-      el[0] = str;
+  //   for (let key in data) {
+  //     var str = key.replace(/_/g, " ");
+  //     let el = [];
+  //     el[0] = str;
 
-      if (dollarValue > 100) {
-        el[1] = Math.round(data[key]/100 * dollarValue);
-      } else {
-        el[1] = data[key];
-      }
-      columns.push(el);
-    }
+  //     if (dollarValue > 100) {
+  //       el[1] = Math.round(data[key]/100 * dollarValue);
+  //     } else {
+  //       el[1] = data[key];
+  //     }
+  //     columns.push(el);
+  //   }
 
-    let chart = c3.generate({
-      bindto: '#printchart',
-      data: {
-        columns: columns,
-        type: 'donut',
-        order: null
-      },
-      donut: {
-        label: {
-            format: function (value, ratio, id) {
-                return d3.format('$')(value);
-            }
-        }
-      },
-      color: {
-        pattern: ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"]
-      }
-    });
-  }
+  //   let chart = c3.generate({
+  //     bindto: '#printchart',
+  //     data: {
+  //       columns: columns,
+  //       type: 'donut',
+  //       order: null
+  //     },
+  //     donut: {
+  //       label: {
+  //           format: function (value, ratio, id) {
+  //               return d3.format('$')(value);
+  //           }
+  //       }
+  //     },
+  //     color: {
+  //       pattern: ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"]
+  //     }
+  //   });
+  // }
 
 
   render () {
