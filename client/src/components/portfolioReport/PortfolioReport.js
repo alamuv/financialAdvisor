@@ -93,36 +93,44 @@ class PortfolioReport extends React.Component {
           <span className="riskLevel">{this.props.riskLevel} </span>
           <div className="subheading">Investment Amount - ${this.props.dollarValue}</div>
         </div>
+        <div className="center">
+          <AssetTable riskLevel={this.props.riskLevel} dollarValue={this.props.dollarValue} />
+        </div>
         <div id="printchart">
         </div>
-        <span>
-          <AssetTable riskLevel={this.props.riskLevel} dollarValue={this.props.dollarValue} />
-        </span>
+        <br /> <br />
+        <div className="subheading">
+          Asset Allocation for More/Less Conservative Risk Values
+        </div>
         <div>
-          <span>
-          <div className="subheading">
-            Less Conservative Portfolio  RiskLevel - {this.props.riskLevel-1} </div>
+          <div>
+          <div className="tableHeading">
+            RiskLevel - {this.props.riskLevel-1} </div>
             <AssetTable riskLevel={this.props.riskLevel-1} dollarValue={this.props.dollarValue} />
-          </span>
-          <span>
-          <div className="subheading">
-            More Conservative Portfolio  RiskLevel - {this.props.riskLevel+1} </div>
-            <AssetTable riskLevel={this.props.riskLevel+1} dollarValue={this.props.dollarValue} />
-          </span>
+          </div>
+          <br /><br />
+          <div>
+          <div className="tableHeading">
+            RiskLevel - {parseInt(this.props.riskLevel)+1} </div>
+            <AssetTable riskLevel={parseInt(this.props.riskLevel)+1} dollarValue={this.props.dollarValue} />
+          </div>
         </div>
       </div>
     );
   }
 
   render () {
-    let tooltip = <Tooltip id={tooltip}>{'Print Asset Distribution'}</Tooltip>;
+    let tooltip = <Tooltip id={tooltip}>{'Print'}</Tooltip>;
     return (
       <div>
-        <div id="print">
-          <Link to={`/print/${this.props.riskLevel}/${this.props.dollarValue}`}>
-            Print
-          </Link>
-        </div>
+        <OverlayTrigger
+          overlay={tooltip} placement="bottom"
+          delayShow={150} delayHide={50}
+        >
+          <button className="printLink"
+            onClick={() => this.setPrintingState()}>
+          </button>
+        </OverlayTrigger>
         <Modal
           show={this.state.printing}
           onHide={() => this.resetPrinitngState()}
@@ -147,8 +155,3 @@ class PortfolioReport extends React.Component {
 }
 
 export default PortfolioReport;
-        // <OverlayTrigger
-        //   overlay={tooltip} placement="bottom"
-        //   delayShow={150} delayHide={50}
-        // >
-        // </OverlayTrigger>

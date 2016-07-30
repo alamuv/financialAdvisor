@@ -2,6 +2,7 @@ import React from 'react';
 import Label from '../../../data/label';
 import AssetDonut from './AssetDonut';
 import AssetTable from './AssetTable';
+import PortfolioReport from '../portfolioReport/PortfolioReport'
 import {Link} from 'react-router';
 
 const AssetPlan = ({riskLevel, dollarValue}) => {
@@ -13,6 +14,7 @@ const AssetPlan = ({riskLevel, dollarValue}) => {
         <span className="riskLevel">${dollarValue}</span>
       </div> 
       <div className="center donut">
+        <PortfolioReport riskLevel={riskLevel} dollarValue={dollarValue} />
         <div id="print">
           <Link to={`/print/${riskLevel}/${dollarValue}`}>
             Print
