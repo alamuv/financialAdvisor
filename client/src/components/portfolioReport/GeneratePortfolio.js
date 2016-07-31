@@ -7,7 +7,10 @@ import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
 import c3 from 'c3';
 
-
+// this file is currently not used
+// routes to this page when clicked on print react-router link from assetPlan
+// generates asset allocation summary, trying to format side-by-side, 
+// needs more work on formattting
 class GeneratePortfolio extends React.Component {
   constructor(props) {
     super(props);
@@ -37,17 +40,17 @@ class GeneratePortfolio extends React.Component {
     return (
       <div>
         <div className="printButton">
-          <Button bsSize="small" bsStyle="info" onClick={() => this.printPortfolio()}>Print</Button>
+          <Button bsSize="small" bsStyle="info" onClick={() => this.printPortfolio()}>{Label.print}</Button>
           {' '}
           <Link to="/">
-            Cancel
+            {Label.cancel}
           </Link>
         </div>
         <div id="printThis">
           <div className="center subheading">
             {Label.distributionHeader}
             <span className="riskLevel">{riskLevel} </span>
-            <div className="subheading">Investment Amount - ${dollarValue}</div>
+            <div className="subheading">{Label.investmentAmount}{dollarValue}</div>
           </div>
           <div>
             <div className="center">
@@ -57,18 +60,15 @@ class GeneratePortfolio extends React.Component {
               <AssetDonut riskLevel={riskLevel} dollarValue={dollarValue} />
             </div>
           </div>
-          <div className="subheading">
-            Asset Allocation for More/Less Conservative Risk Values
-          </div>
           <div>
             <span className="leftHalf">
             <div className="tableHeading">
-              RiskLevel - {riskLevel-1} </div>
+              {Label.conservativePortfolio}{riskLevel-1} </div>
               <AssetTable riskLevel={riskLevel-1} dollarValue={dollarValue} />
             </span>
             <span className="rightHalf">
             <div className="tableHeading">
-              RiskLevel - {parseInt(riskLevel)+1} </div>
+              {Label.riskierPortfolio}{parseInt(riskLevel)+1} </div>
               <AssetTable riskLevel={parseInt(riskLevel)+1} dollarValue={dollarValue} />
             </span>
           </div>

@@ -8,7 +8,8 @@ import NavLink from '../../../helper/NavLink';
 import {Link} from 'react-router';
 import c3 from 'c3';
 
-
+//PortfolioReport renders a print icon
+//onClick event on the icon generates a print report on a Modal
 class PortfolioReport extends React.Component {
   constructor(props) {
     super(props);
@@ -89,10 +90,10 @@ class PortfolioReport extends React.Component {
     return (
       <div>
         <div className="subheading">
-          {'Asset Allocation Report'}
+          {Label.portfolioReportHeading}
         </div> <br />
-        <div className="riskLevel">Asset Distribution for Risk - {this.props.riskLevel} </div>
-        <div className="riskLevel">Investment Amount - ${this.props.dollarValue}</div>
+        <div className="riskLevel">{Label.distributionHeader + this.props.riskLevel} </div>
+        <div className="riskLevel">{Label.investmentAmount + this.props.dollarValue}</div>
         <div id="printchart">
         </div><br />
           <AssetTable riskLevel={this.props.riskLevel} dollarValue={this.props.dollarValue} />
@@ -100,13 +101,13 @@ class PortfolioReport extends React.Component {
         <div>
           <div>
           <div className="riskLevel">
-            Conservative Portfolio Risk - {this.props.riskLevel-1} </div> <br />
+            {Label.conservativePortfolio} {this.props.riskLevel-1} </div> <br />
             <AssetTable riskLevel={this.props.riskLevel-1} dollarValue={this.props.dollarValue} />
           </div>
           <br /><br />
           <div>
           <div className="riskLevel">
-            Riskier Portfolio Risk - {parseInt(this.props.riskLevel)+1} </div> <br />
+            {Label.riskierPortfolio} {parseInt(this.props.riskLevel)+1} </div> <br />
             <AssetTable riskLevel={parseInt(this.props.riskLevel)+1} dollarValue={this.props.dollarValue} />
           </div>
         </div>
@@ -139,8 +140,8 @@ class PortfolioReport extends React.Component {
             {this.generateReport()}
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={() => this.resetPrinitngState()}>Cancel</Button>
-            <Button bsStyle="info" onClick={() => this.printPortfolio()}>Print Portfolio</Button>
+            <Button bsSize="small" onClick={() => this.resetPrinitngState()}>{Label.cancel}</Button>
+            <Button bsSize="small" bsStyle="info" onClick={() => this.printPortfolio()}>{Label.print}</Button>
           </Modal.Footer>
         </Modal>
 

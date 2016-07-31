@@ -3,6 +3,7 @@ import assetPlan from '../../../data/data';
 import Label from '../../../data/label';
 import Griddle from 'griddle-react';
 
+// renders the asset allocation in a table
 class AssetTable extends React.Component {
   constructor(props) {
     super(props);

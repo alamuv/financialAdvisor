@@ -6,10 +6,16 @@ const label = {
   highRisk: 'High Risk 10',
   dollarValue: 'How much are you planning to invest?',
   dollarValueHelp: 'Enter a value greater than $100',
-  distributionHeader: 'Asset Distribution for Risk Level ',
+  distributionHeader: 'Asset Distribution for Risk - ',
   portfolioReport: 'Portfolio Report',
   initialRiskLevel: 5,
-  initialDollarValue: 100
+  initialDollarValue: 100,
+  portfolioReportHeading: 'Asset Allocation Report',
+  investmentAmount: 'Investment Amount - $',
+  conservativePortfolio: 'Conservative Portfolio Risk - ',
+  riskierPortfolio: 'Riskier Portfolio Risk - ',
+  cancel: 'Cancel',
+  print: 'Print'
 };
 
 module.exports = label;
