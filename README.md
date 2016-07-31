@@ -1,6 +1,8 @@
 # Asset Distribution Estimator
 Provides the percentage distribution of assets based on chosen financial risk
 
+![Demo](/client/assets/financialAdvisor-1.gif)
+
 ## Getting started
 - Install Node.js 4.0 or newer
 - Run `npm install`
