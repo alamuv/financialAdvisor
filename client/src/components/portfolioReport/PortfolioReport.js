@@ -22,10 +22,12 @@ class PortfolioReport extends React.Component {
   setPrintingState () {
     this.setState({printing: true});
   }
+  
   resetPrinitngState () {    
     this.setState({printing: false});
   }
 
+  // selects part of the DOM to Print
   printPortfolio () {
     var $print = document.getElementById("printThis");
     var domClone = $print.cloneNode(true);
@@ -121,12 +123,12 @@ class PortfolioReport extends React.Component {
       <div>
         <OverlayTrigger
           overlay={tooltip} placement="bottom"
-          delayShow={150} delayHide={50}
-        >
+          delayShow={150} delayHide={50}>
           <button className="printLink"
             onClick={() => this.setPrintingState()}>
           </button>
         </OverlayTrigger>
+
         <Modal
           show={this.state.printing}
           onHide={() => this.resetPrinitngState()}

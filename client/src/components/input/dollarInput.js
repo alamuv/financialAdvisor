@@ -12,12 +12,7 @@ class DollarInput extends React.Component {
       value: ''
     }
   }
-
-  getValidationState() {
-    if (this.state.value >= 100) return 'success';
-    else if (this.state.value < 100) return 'error';
-  }
-
+  
   handleChange(value) {
     this.setState({value});
     this.props.onDollarValChange(value);
@@ -35,7 +30,7 @@ class DollarInput extends React.Component {
 
   render() {
     return (
-      <div className='center dollar'>
+      <div className="center dollar">
         <input id="dollarVal" className="form-control"
           type="text"
           value={this.state.value}
