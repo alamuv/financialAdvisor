@@ -13,7 +13,7 @@
   color: #606560;
   font-weight: bold;
   font-family: "Circular","Helvetica Neue",Helvetica,Arial,sans-serif;   
-  font-size: 18px;
+  font-size: 20px;
   line-height: 100%;
   text-align: center;
   margin-top: 2%;
@@ -45,9 +45,10 @@
 }
 
 .riskLevel {
-  font-family: sans-serif;
-  font-size: 20px;
+  font-family: "Circular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
   font-weight: bold;
+  color: #606560;
 }
 
 #lowrisk {
@@ -62,11 +63,11 @@
 
 .assettable
 { 
-  /*margin-left: auto;
-  margin-right: auto;*/
   border:1px solid #DDD;
   margin: 0 auto;
-  max-width: 50%;
+  /*margin-left: 0 auto;
+  margin-right: 0 auto;
+  max-width: 50%;*/
 }
 
 .griddle th{
@@ -126,10 +127,14 @@ iframe html {
 
 #print {
   text-align: right;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .printButton {
   float: right;
+  margin-right: 20%;
 }
 
 @media print {
@@ -151,7 +156,7 @@ iframe html {
     vertical-align: top;
     display: block;
     float:left;
-    margin-right: 10%;
+    margin-left: 10%;
     width: 100px;
   }
 
@@ -159,18 +164,13 @@ iframe html {
     vertical-align: top;
     display: block;
     float:right;
-    margin-left: 10%;
+    margin-right: 10%;
     width: 100px;
   }
 }
-/*
-.groupSpan {
-  max-height: 30%;
-}*/
 
 .tableHeading {
   text-align: center;
-  font-weight: bold;
 }
 
 .printLink {
@@ -178,9 +178,11 @@ iframe html {
   background-size: contain;
   height: 20px;
   width: 20px;
-  margin-right: 0 auto;
-  position: relative;
-  right: 20px;
+  position: absolute;
+  margin-right: 5%;
+  margin-top: 2%;
+  top: 0px;
+  right: 0px;
 }
 
 /* -- CSS from react-rangeslider -- */
@@ -224,12 +226,41 @@ iframe html {
   top:-7px;
 }
 
-/*.chart {
-  background: #fff;
-  max-width: 500px;
-}*/
-/*
-* {
-  box-sizing: border-box;
+@media only screen and (max-device-width: 480px) {
+  .heading {
+    font-size: 1em;
+  }
+
+  .subheading {
+    font-size: 1em;
+  }
+
+  #lowrisk, #highrisk {
+    font-size: 0.75em;
+  }
+
+  .help {
+    font-size: x-small;
+  }
+
+  .rangeslider-horizontal {
+    height:10px;
+    border-radius:10px;
+  }
+
+  .rangeslider-horizontal .rangeslider__handle { 
+    width:20px;
+    height:20px;
+    border-radius:40px;
+    top:-5px;
+  }
+
+  input {
+    height: 30px;
+  }
+
+  input[type="text"] {
+    font-size: x-small;
+  }
+
 }
-*/

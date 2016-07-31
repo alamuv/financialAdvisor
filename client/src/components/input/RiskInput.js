@@ -20,6 +20,7 @@ const RiskInput = ({riskLevel, onRiskChange}) => {
         <div id="lowrisk">{Label.lowRisk}</div>
         <div id="highrisk">{Label.highRisk}</div>
       </div>
+      <br/>
     </div>
   );
 };

@@ -89,29 +89,24 @@ class PortfolioReport extends React.Component {
     return (
       <div>
         <div className="subheading">
-          {Label.distributionHeader}
-          <span className="riskLevel">{this.props.riskLevel} </span>
-          <div className="subheading">Investment Amount - ${this.props.dollarValue}</div>
-        </div>
-        <div className="center">
-          <AssetTable riskLevel={this.props.riskLevel} dollarValue={this.props.dollarValue} />
-        </div>
+          {'Asset Allocation Report'}
+        </div> <br />
+        <div className="riskLevel">Asset Distribution for Risk - {this.props.riskLevel} </div>
+        <div className="riskLevel">Investment Amount - ${this.props.dollarValue}</div>
         <div id="printchart">
-        </div>
-        <br /> <br />
-        <div className="subheading">
-          Asset Allocation for More/Less Conservative Risk Values
-        </div>
+        </div><br />
+          <AssetTable riskLevel={this.props.riskLevel} dollarValue={this.props.dollarValue} />
+        <br /> 
         <div>
           <div>
-          <div className="tableHeading">
-            RiskLevel - {this.props.riskLevel-1} </div>
+          <div className="riskLevel">
+            Conservative Portfolio Risk - {this.props.riskLevel-1} </div> <br />
             <AssetTable riskLevel={this.props.riskLevel-1} dollarValue={this.props.dollarValue} />
           </div>
           <br /><br />
           <div>
-          <div className="tableHeading">
-            RiskLevel - {parseInt(this.props.riskLevel)+1} </div>
+          <div className="riskLevel">
+            Riskier Portfolio Risk - {parseInt(this.props.riskLevel)+1} </div> <br />
             <AssetTable riskLevel={parseInt(this.props.riskLevel)+1} dollarValue={this.props.dollarValue} />
           </div>
         </div>

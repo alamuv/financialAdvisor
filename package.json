@@ -23,8 +23,6 @@
     "lodash": "^4.14.0",
     "react": "^15.2.1",
     "react-bootstrap": "^0.29.5",
-    "react-d3-basic": "^1.6.11",
-    "react-d3-tooltip": "^1.4.14",
     "react-dom": "^15.2.1",
     "react-rangeslider": "^1.0.3",
     "react-router": "^2.6.0"

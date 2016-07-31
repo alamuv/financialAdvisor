@@ -10,20 +10,15 @@ const AssetPlan = ({riskLevel, dollarValue}) => {
     <div>
       <div className="subheading">
         {Label.distributionHeader}
-        <span className="riskLevel">{riskLevel} - </span>
-        <span className="riskLevel">${dollarValue}</span>
+        <span>{riskLevel} - </span>
+        <span>${dollarValue}</span>
       </div> 
       <div className="center donut">
         <PortfolioReport riskLevel={riskLevel} dollarValue={dollarValue} />
-        <div id="print">
-          <Link to={`/print/${riskLevel}/${dollarValue}`}>
-            Print
-          </Link>
-        </div>
         <AssetDonut riskLevel={riskLevel} dollarValue={dollarValue} />
       <br />
-        <AssetTable riskLevel={riskLevel} dollarValue={dollarValue} />
       </div>
+        <AssetTable riskLevel={riskLevel} dollarValue={dollarValue} />
     </div>
   );
 }

@@ -64,7 +64,7 @@ class AssetPlan extends React.Component {
           <SimpleTooltip />
         </PieTooltip>
       </div>
-      );
+    );
   }
 
   // responsiveDonut sets viewBox attribute on the svg element to render a responsivesvg
