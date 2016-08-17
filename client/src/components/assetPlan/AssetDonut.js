@@ -23,7 +23,7 @@ class AssetDonut extends React.Component {
       let el = [];
       el[0] = str;
 
-      if (this.props.dollarValue > 100) {
+      if (this.props.dollarValue > 0) {
         el[1] = Math.round(data[key]/100 * this.props.dollarValue);
       } else {
         el[1] = data[key];

@@ -12,10 +12,10 @@ describe('<AssetPlan/>', () => {
     expect(AssetPlan.prototype.componentDidMount.calledOnce).to.equal(true);
   });
 
-  it('should have a svg to display the donut chart', () => {
-    const wrapper = mount(<AssetPlan/>);
-    expect(wrapper.find('svg')).to.have.length(1);
-  });
+  // it('should have a svg to display the donut chart', () => {
+  //   const wrapper = mount(<AssetPlan/>);
+  //   expect(wrapper.find('svg')).to.have.length(1);
+  // });
 
   it('should have props for risk level', () => {
     const wrapper = shallow(<AssetPlan/>);

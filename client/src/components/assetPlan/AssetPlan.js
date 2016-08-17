@@ -10,7 +10,7 @@ const AssetPlan = ({riskLevel, dollarValue}) => {
     <div>
       <div className="subheading">
         {Label.distributionHeader}
-        <span>{riskLevel} - </span>
+        <span>{riskLevel} / </span>
         <span>${dollarValue}</span>
       </div> 
       <div className="center donut">

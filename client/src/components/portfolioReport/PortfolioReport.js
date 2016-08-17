@@ -4,7 +4,6 @@ import assetPlan from '../../../data/data';
 import AssetDonut from '../assetPlan/AssetDonut';
 import AssetTable from '../assetPlan/AssetTable';
 import { Button, Modal, Tooltip, OverlayTrigger } from 'react-bootstrap';
-import NavLink from '../../../helper/NavLink';
 import {Link} from 'react-router';
 import c3 from 'c3';
 
