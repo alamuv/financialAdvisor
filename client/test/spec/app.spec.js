@@ -1,8 +1,8 @@
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import {expect} from 'chai';
+const React = require('react');
+const { mount, shallow } = require('enzyme');
+const {expect} = require('chai');
 
-import App from '../../src/components/App';
+const App = require('../../src/components/App');
 
 describe('<App/>', () => {
   it('should have state for risk level', () => {

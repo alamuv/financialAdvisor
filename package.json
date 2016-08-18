@@ -4,7 +4,7 @@
   "description": "Provides the percentage distribution of assets based on chosen financial risk",
   "main": "server/server.js",
   "scripts": {
-    "test": "karma start karma.conf.js",
+    "test": "karma start",
     "start": "webpack-dev-server --inline --content-base ."
   },
   "repository": {
@@ -37,18 +37,17 @@
     "enzyme": "^2.4.1",
     "eslint": "^3.1.0",
     "eslint-plugin-react": "^5.2.2",
-    "jasmine-core": "^2.4.1",
     "jsdom": "^9.4.1",
     "karma": "^1.2.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.1.1",
-    "karma-jasmine": "^1.0.2",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.1.0",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.8.0",
     "mocha": "^2.5.3",
-    "mocha-phantomjs": "^4.1.0",
     "react-addons-test-utils": "^15.2.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"

@@ -3,15 +3,16 @@ var path = require('path');
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine'],
+    frameworks: ['mocha'],
     files: [
-      'client/test/**/*.js'
+      'client/src/**/*.js',
+      'client/test/**/*.spec.js'
     ],
 
     preprocessors: {
       // add webpack as preprocessor
-      'client/src/**/*.js': ['webpack', 'sourcemap'],
-      'client/test/**/*.js': ['webpack', 'sourcemap']
+      'src/**/*.js': ['webpack', 'sourcemap'],
+      'test/**/*.spec.js': ['webpack', 'sourcemap']
     },
 
     webpack: { //kind of a copy of your webpack config
@@ -19,20 +20,14 @@ module.exports = function(config) {
       module: {
         loaders: [
           {
-            test: /\.js$/,
+            test:  /.spec\.js$/,
             loader: 'babel',
-            exclude: path.resolve(__dirname, 'node_modules'),
-            query: {
-              presets: ['airbnb']
-            }
-          },
-          {
-            test: /\.json$/,
-            loader: 'json',
-          },
+            exclude: path.resolve(__dirname, 'node_modules')
+          }
         ]
       },
       externals: {
+        'cheerio': 'window',
         'react/lib/ExecutionEnvironment': true,
         'react/lib/ReactContext': true
       }
@@ -44,32 +39,22 @@ module.exports = function(config) {
 
     plugins: [
       'karma-webpack',
-      'karma-jasmine',
+      'karma-mocha',
       'karma-sourcemap-loader',
       'karma-chrome-launcher',
-      'karma-phantomjs-launcher'
+      'karma-mocha-reporter'
     ],
-
-
     babelPreprocessor: {
       options: {
         presets: ['airbnb']
       }
     },
-    reporters: ['spec', 'coverage'],
+    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
-
-
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
-
-    browserNoActivityTimeout: 60000,
+    browsers: ['Chrome'],
+    singleRun: false,
   })
 };
