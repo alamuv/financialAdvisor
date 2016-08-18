@@ -4,7 +4,6 @@ import assetPlan from '../../../data/data';
 import AssetDonut from '../assetPlan/AssetDonut';
 import AssetTable from '../assetPlan/AssetTable';
 import { Button, Modal, Tooltip, OverlayTrigger } from 'react-bootstrap';
-import {Link} from 'react-router';
 import c3 from 'c3';
 
 //PortfolioReport renders a print icon
@@ -15,7 +14,7 @@ class PortfolioReport extends React.Component {
 
     this.state = {
       printing: false
-    }
+    };
   }
 
   setPrintingState () {
@@ -28,18 +27,18 @@ class PortfolioReport extends React.Component {
 
   // selects part of the DOM to Print
   printPortfolio () {
-    var $print = document.getElementById("printThis");
+    var $print = document.getElementById('printThis');
     var domClone = $print.cloneNode(true);
     
-    var $printSection = document.getElementById("printSection");
+    var $printSection = document.getElementById('printSection');
     
     if (!$printSection) {
-      var $printSection = document.createElement("div");
-      $printSection.id = "printSection";
+      var $printSection = document.createElement('div');
+      $printSection.id = 'printSection';
       document.body.appendChild($printSection);
     }
     
-    $printSection.innerHTML = "";
+    $printSection.innerHTML = '';
     
     $printSection.appendChild(domClone);
     window.print();
@@ -55,12 +54,12 @@ class PortfolioReport extends React.Component {
     let data = assetPlan[this.props.riskLevel];
 
     for (let key in data) {
-      var str = key.replace(/_/g, " ");
+      var str = key.replace(/_/g, ' ');
       let el = [];
       el[0] = str;
 
       if (this.props.dollarValue > 100) {
-        el[1] = Math.round(data[key]/100 * this.props.dollarValue);
+        el[1] = Math.round(data[key] / 100 * this.props.dollarValue);
       } else {
         el[1] = data[key];
       }
@@ -76,13 +75,13 @@ class PortfolioReport extends React.Component {
       },
       donut: {
         label: {
-            format: function (value, ratio, id) {
-                return d3.format('$')(value);
-            }
+          format: function (value, ratio, id) {
+            return d3.format('$')(value);
+          }
         }
       },
       color: {
-        pattern: ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"]
+        pattern: ['#aaeeee', '#7798BF', '#55BF3B', '#DDDF0D', '#DF5353']
       }
     });
   }
@@ -102,14 +101,14 @@ class PortfolioReport extends React.Component {
         <div>
           <div>
           <div className="riskLevel">
-            {Label.conservativePortfolio} {this.props.riskLevel-1} </div> <br />
-            <AssetTable riskLevel={this.props.riskLevel-1} dollarValue={this.props.dollarValue} />
+            {Label.conservativePortfolio} {this.props.riskLevel - 1} </div> <br />
+            <AssetTable riskLevel={this.props.riskLevel - 1} dollarValue={this.props.dollarValue} />
           </div>
           <br /><br />
           <div>
           <div className="riskLevel">
-            {Label.riskierPortfolio} {parseInt(this.props.riskLevel)+1} </div> <br />
-            <AssetTable riskLevel={parseInt(this.props.riskLevel)+1} dollarValue={this.props.dollarValue} />
+            {Label.riskierPortfolio} {parseInt(this.props.riskLevel) + 1} </div> <br />
+            <AssetTable riskLevel={parseInt(this.props.riskLevel) + 1} dollarValue={this.props.dollarValue} />
           </div>
         </div>
       </div>

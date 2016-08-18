@@ -11,34 +11,35 @@ class DollarInput extends React.Component {
     this.state = {
       value: '',
       helpDollarInput: ''
-    }
+    };
   }
   
   handleChange(value) {
-    var value = value.replace(/\$/g,"");
-    var value = value.replace(/\,/g,"");
-    console.log(value);
+    var value = value.replace(/\$/g, '');
+    var value = value.replace(/\,/g, '');
     if (isNaN(value)) {
-      this.setState({helpDollarInput: Label.dollarValueHelp})
+      this.setState({helpDollarInput: Label.dollarValueHelp});
     } else {
       if (value === '') {
-        this.setState({value})
+        this.setState({value});
+        this.setState({helpDollarInput: ''});
       } else {
         var amount = this.formatDollarVal(value);
-        this.setState({value: '$' + amount})
+        this.setState({value: '$' + amount});
+        this.setState({helpDollarInput: ''});
       }
       this.props.onDollarValChange(value);
     }
   }
 
   handleEnter(event) {
-    if(event.key === 'Enter') {
+    if (event.key === 'Enter') {
       this.clearInput();
     }
   }
 
   clearInput() {
-    this.setState({value: ''})
+    this.setState({value: ''});
   }
 
   formatDollarVal(value) {
@@ -48,7 +49,7 @@ class DollarInput extends React.Component {
     var x2 = x.length > 1 ? '.' + x[1] : '';
     var rgx = /(\d+)(\d{3})/;
     while (rgx.test(x1)) {
-    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+      x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2; 
   }
@@ -65,12 +66,12 @@ class DollarInput extends React.Component {
             onChange={event => this.handleChange(event.target.value)}
             onKeyPress={event => this.handleEnter(event)} />
           <div className="help">{this.state.helpDollarInput}</div>
-          <br />
         </div>
+        <br />
+        <br />
       </div>
-    )
+    );
   }
 }
 
 export default DollarInput;
-        // {this.dollarInputHelp()}  

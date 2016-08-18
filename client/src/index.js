@@ -12,3 +12,4 @@ render((
 ), document.getElementById('app'));
 
 // render(<App />, document.getElementById('app'));
+    // "test": "mocha -w client/test/helpers/browser.js client/test/spec/*.spec.js",

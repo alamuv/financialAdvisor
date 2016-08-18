@@ -19,12 +19,12 @@ class AssetDonut extends React.Component {
     let data = assetPlan[this.props.riskLevel];
 
     for (let key in data) {
-      var str = key.replace(/_/g, " ");
+      var str = key.replace(/_/g, ' ');
       let el = [];
       el[0] = str;
 
       if (this.props.dollarValue > 0) {
-        el[1] = Math.round(data[key]/100 * this.props.dollarValue);
+        el[1] = Math.round(data[key] / 100 * this.props.dollarValue);
       } else {
         el[1] = data[key];
       }
@@ -40,13 +40,13 @@ class AssetDonut extends React.Component {
       },
       donut: {
         label: {
-            format: function (value, ratio, id) {
-                return d3.format('$')(value);
-            }
+          format: function (value, ratio, id) {
+            return d3.format('$')(value);
+          }
         }
       },
       color: {
-        pattern: ["#aaeeee", "#7798BF", "#55BF3B", "#DDDF0D", "#DF5353"]
+        pattern: ['#aaeeee', '#7798BF', '#55BF3B', '#DDDF0D', '#DF5353']
       }
     });
   }

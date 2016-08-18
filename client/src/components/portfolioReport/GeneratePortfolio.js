@@ -17,18 +17,18 @@ class GeneratePortfolio extends React.Component {
   }
 
   printPortfolio () {
-    var $print = document.getElementById("printThis");
+    var $print = document.getElementById('printThis');
     var domClone = $print.cloneNode(true);
     
-    var $printSection = document.getElementById("printSection");
+    var $printSection = document.getElementById('printSection');
     
     if (!$printSection) {
-      var $printSection = document.createElement("div");
-      $printSection.id = "printSection";
+      var $printSection = document.createElement('div');
+      $printSection.id = 'printSection';
       document.body.appendChild($printSection);
     }
     
-    $printSection.innerHTML = "";
+    $printSection.innerHTML = '';
     
     $printSection.appendChild(domClone);
     window.print();
@@ -63,13 +63,13 @@ class GeneratePortfolio extends React.Component {
           <div>
             <span className="leftHalf">
             <div className="tableHeading">
-              {Label.conservativePortfolio}{riskLevel-1} </div>
-              <AssetTable riskLevel={riskLevel-1} dollarValue={dollarValue} />
+              {Label.conservativePortfolio}{riskLevel - 1} </div>
+              <AssetTable riskLevel={riskLevel - 1} dollarValue={dollarValue} />
             </span>
             <span className="rightHalf">
             <div className="tableHeading">
-              {Label.riskierPortfolio}{parseInt(riskLevel)+1} </div>
-              <AssetTable riskLevel={parseInt(riskLevel)+1} dollarValue={dollarValue} />
+              {Label.riskierPortfolio}{parseInt(riskLevel) + 1} </div>
+              <AssetTable riskLevel={parseInt(riskLevel) + 1} dollarValue={dollarValue} />
             </span>
           </div>
           <br />

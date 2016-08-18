@@ -15,9 +15,9 @@ class AssetTable extends React.Component {
 
     for (var key in data) {
       var row = {};
-      row.Asset = key.replace(/_/g, " ");
-      row.Percentage = data[key]+'%';
-      row.Value = '$' + Math.round(data[key]/100 * this.props.dollarValue);
+      row.Asset = key.replace(/_/g, ' ');
+      row.Percentage = data[key] + '%';
+      row.Value = '$' + Math.round(data[key] / 100 * this.props.dollarValue);
       tableData.push(row);
     }
 
@@ -27,7 +27,7 @@ class AssetTable extends React.Component {
         tableClassName="assettable"
         useGriddleStyles={false}
         showPager={false}
-        columns={["Asset", "Percentage", "Value"]}/>
+        columns={['Asset', 'Percentage', 'Value']}/>
     );
   }
 

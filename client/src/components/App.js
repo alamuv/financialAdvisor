@@ -7,8 +7,8 @@ import AssetPlan from './assetPlan/AssetPlan';
 import Label from '../../data/label';
 var _debounce = require('lodash/debounce');
 
-//App holds the risk level as its state
-//When the risk level changes,App re-renders
+// App holds the risk level and dollar value as its state
+// When the risk level or dollar value changes,App re-renders
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +16,7 @@ class App extends React.Component {
     this.state = {
       dollarValue: Label.initialDollarValue,
       riskLevel: Label.initialRiskLevel
-    }
+    };
   }
 
   setDollarVal(dollarValue) {
