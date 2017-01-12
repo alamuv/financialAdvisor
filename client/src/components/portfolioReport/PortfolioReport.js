@@ -144,7 +144,6 @@ class PortfolioReport extends React.Component {
             <Button bsSize="small" bsStyle="info" onClick={() => this.printPortfolio()}>{Label.print}</Button>
           </Modal.Footer>
         </Modal>
-
       </div>     
     );
   }

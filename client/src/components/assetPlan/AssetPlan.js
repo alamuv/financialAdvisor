@@ -3,7 +3,6 @@ import Label from '../../../data/label';
 import AssetDonut from './AssetDonut';
 import AssetTable from './AssetTable';
 import PortfolioReport from '../portfolioReport/PortfolioReport';
-import {Link} from 'react-router';
 
 const AssetPlan = ({riskLevel, dollarValue}) => {
   return (
@@ -18,7 +17,7 @@ const AssetPlan = ({riskLevel, dollarValue}) => {
         <AssetDonut riskLevel={riskLevel} dollarValue={dollarValue} />
       <br />
       </div>
-        <AssetTable riskLevel={riskLevel} dollarValue={dollarValue} />
+      <AssetTable riskLevel={riskLevel} dollarValue={dollarValue} />
     </div>
   );
 };

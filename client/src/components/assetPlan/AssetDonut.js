@@ -10,7 +10,10 @@ class AssetDonut extends React.Component {
   // invoke responsiveDonut after the component renders and an svg element exists
   componentDidMount() {
     this.renderDonut();
-    // this.responsiveDonut();
+  }
+
+  componentDidUpdate() {
+    this.renderDonut();
   }
 
   // renderDonut uses c3 library pie chart to render a Donut
@@ -54,7 +57,6 @@ class AssetDonut extends React.Component {
   render() {
     return (
       <div className="chart">
-        {this.renderDonut()}
       </div>
     );
   }

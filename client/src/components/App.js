@@ -5,7 +5,7 @@ import DollarInput from './input/DollarInput';
 import RiskInput from './input/RiskInput';
 import AssetPlan from './assetPlan/AssetPlan';
 import Label from '../../data/label';
-var _debounce = require('lodash/debounce');
+import _debounce from 'lodash/debounce';
 
 // App holds the risk level and dollar value as its state
 // When the risk level or dollar value changes,App re-renders
@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <RiskInput riskLevel={this.state.riskLevel} onRiskChange={riskLevel => this.setState({riskLevel})}/>
+        <RiskInput riskLevel={this.state.riskLevel} onRiskChange={(riskLevel) => this.setState({riskLevel})}/>
         <DollarInput dollarVal={this.state.dollarValue} onDollarValChange={debounceDollarValChange}/>
         <AssetPlan riskLevel={this.state.riskLevel} dollarValue={this.state.dollarValue}/>
       </div>
